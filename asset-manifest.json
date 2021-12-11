@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/react-kakao-map/index.html/static/js/main.fa7f9ead.chunk.js",
-    "main.js.map": "/react-kakao-map/index.html/static/js/main.fa7f9ead.chunk.js.map",
-    "runtime-main.js": "/react-kakao-map/index.html/static/js/runtime-main.70a5dfa0.js",
-    "runtime-main.js.map": "/react-kakao-map/index.html/static/js/runtime-main.70a5dfa0.js.map",
-    "static/js/2.5926e1b3.chunk.js": "/react-kakao-map/index.html/static/js/2.5926e1b3.chunk.js",
-    "static/js/2.5926e1b3.chunk.js.map": "/react-kakao-map/index.html/static/js/2.5926e1b3.chunk.js.map",
-    "index.html": "/react-kakao-map/index.html/index.html",
-    "static/js/2.5926e1b3.chunk.js.LICENSE.txt": "/react-kakao-map/index.html/static/js/2.5926e1b3.chunk.js.LICENSE.txt"
+    "main.js": "/react-kakao-map/static/js/main.fa7f9ead.chunk.js",
+    "main.js.map": "/react-kakao-map/static/js/main.fa7f9ead.chunk.js.map",
+    "runtime-main.js": "/react-kakao-map/static/js/runtime-main.32993b43.js",
+    "runtime-main.js.map": "/react-kakao-map/static/js/runtime-main.32993b43.js.map",
+    "static/js/2.bf6dabd7.chunk.js": "/react-kakao-map/static/js/2.bf6dabd7.chunk.js",
+    "static/js/2.bf6dabd7.chunk.js.map": "/react-kakao-map/static/js/2.bf6dabd7.chunk.js.map",
+    "index.html": "/react-kakao-map/index.html",
+    "static/js/2.bf6dabd7.chunk.js.LICENSE.txt": "/react-kakao-map/static/js/2.bf6dabd7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.70a5dfa0.js",
-    "static/js/2.5926e1b3.chunk.js",
+    "static/js/runtime-main.32993b43.js",
+    "static/js/2.bf6dabd7.chunk.js",
     "static/js/main.fa7f9ead.chunk.js"
   ]
 }
