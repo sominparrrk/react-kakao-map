@@ -1,7 +1,13 @@
-import GeoMap from "./components/GeoMap";
+import NavBar from "./components/common/NavBar";
+import GeoMap from "./components/map/GeoMap";
 
 function App() {
-  return <GeoMap />;
+  return (
+    <>
+      <NavBar />
+      <GeoMap />
+    </>
+  );
 }
 
 export default App;
