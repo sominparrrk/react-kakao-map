@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Map } from "react-kakao-maps-sdk";
-import location from "../services/location";
+import location from "../../services/location";
 import EventMarker from "./EventMarker";
 
 const GeoMap = () => {
