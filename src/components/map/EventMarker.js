@@ -12,6 +12,13 @@ const EventMarker = ({ position, title }) => {
     <div ref={ref}>
       <MapMarker
         position={position}
+        image={{
+          src: "/img/trash-icon.svg", // 마커이미지의 주소입니다
+          size: {
+            width: 30,
+            height: 30,
+          }, // 마커이미지의 크기입니다
+        }}
         // @ts-ignore
         onClick={(marker) => {
           map.panTo(marker.getPosition());
