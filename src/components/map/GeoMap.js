@@ -33,6 +33,17 @@ const GeoMap = () => {
     setLoading(false);
   };
 
+  const calcDistance = (myLat, myLng, targetLat, targetLng) => {
+    const p = 0.017453292519943295; // Math.PI / 180
+    const c = Math.cos;
+    const a =
+      0.5 -
+      c((targetLat - myLat) * p) / 2 +
+      (c(myLat * p) * c(targetLat * p) * (1 - c((targetLng - myLng) * p))) / 2;
+
+    return (12742 * Math.asin(Math.sqrt(a))).toFixed(2); // 2 * R; R = 6371 km
+  };
+
   useEffect(() => {
     fetchData();
     if (navigator.geolocation) {
@@ -85,6 +96,12 @@ const GeoMap = () => {
               position={value.latlng}
               name={value.name}
               quantity={value.quantity}
+              distance={calcDistance(
+                state.center.lat,
+                state.center.lng,
+                value.latlng.lat,
+                value.latlng.lng
+              )}
             />
           ))}
       </Map>

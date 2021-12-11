@@ -3,7 +3,7 @@ import { CustomOverlayMap, MapMarker, useMap } from "react-kakao-maps-sdk";
 import useComponentVisible from "../../hooks/useComponentVisible";
 import Overlay from "./Overlay";
 
-const EventMarker = ({ position, name, quantity }) => {
+const EventMarker = ({ position, name, quantity, distance }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
   const map = useMap();
@@ -29,7 +29,7 @@ const EventMarker = ({ position, name, quantity }) => {
       {isComponentVisible && (
         <>
           <CustomOverlayMap position={position} />
-          <Overlay name={name} quantity={quantity} />
+          <Overlay name={name} quantity={quantity} distance={distance} />
         </>
       )}
     </div>

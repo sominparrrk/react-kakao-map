@@ -29,12 +29,12 @@ const LeftQuantity = styled.span``;
 
 const Congestion = styled.p``;
 
-const Overlay = ({ name, quantity }) => {
+const Overlay = ({ name, quantity, distance }) => {
   return (
     <Container>
       <Wrapper>
         <Name>{name}</Name>
-        <Distance>0.5 km</Distance>
+        <Distance>{distance} km</Distance>
         <LeftQuantity>{quantity} kg / 50 kg</LeftQuantity>
         <Congestion>혼잡도 : 보통</Congestion>
       </Wrapper>
