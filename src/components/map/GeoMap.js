@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Map } from "react-kakao-maps-sdk";
+import styled from "styled-components";
 import location from "../../services/location";
 import EventMarker from "./EventMarker";
+
+const LoadingPage = styled.div`
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  line-height: 75vh;
+  color: #20124d;
+  background-color: #ede8ff;
+  font-size: 1.5rem;
+`;
 
 const GeoMap = () => {
   const [state, setState] = useState({
@@ -13,9 +24,13 @@ const GeoMap = () => {
     isLoading: true,
   });
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const fetchData = async () => {
+    setLoading(true);
     const data = await location();
     setData(data);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -48,6 +63,10 @@ const GeoMap = () => {
       }));
     }
   }, []);
+
+  if (loading) {
+    return <LoadingPage>로딩 중 입니다</LoadingPage>;
+  }
 
   return (
     <>
