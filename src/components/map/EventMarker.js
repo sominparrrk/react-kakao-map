@@ -3,7 +3,7 @@ import { CustomOverlayMap, MapMarker, useMap } from "react-kakao-maps-sdk";
 import useComponentVisible from "../../hooks/useComponentVisible";
 import Overlay from "./Overlay";
 
-const EventMarker = ({ position, title }) => {
+const EventMarker = ({ position, name, quantity }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
   const map = useMap();
@@ -13,14 +13,15 @@ const EventMarker = ({ position, title }) => {
       <MapMarker
         position={position}
         image={{
-          src: "/img/trash-icon.svg", // 마커이미지의 주소입니다
+          src: "/img/trash-icon.svg",
           size: {
             width: 30,
             height: 30,
-          }, // 마커이미지의 크기입니다
+          },
         }}
         // @ts-ignore
         onClick={(marker) => {
+          setIsComponentVisible(false);
           map.panTo(marker.getPosition());
           setIsComponentVisible(true);
         }}
@@ -28,7 +29,7 @@ const EventMarker = ({ position, title }) => {
       {isComponentVisible && (
         <>
           <CustomOverlayMap position={position} />
-          <Overlay title={title} />
+          <Overlay name={name} quantity={quantity} />
         </>
       )}
     </div>

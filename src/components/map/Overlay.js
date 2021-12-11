@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   color: #20124d;
 `;
 
-const Title = styled.h3`
+const Name = styled.h3`
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 `;
@@ -29,13 +29,13 @@ const LeftQuantity = styled.span``;
 
 const Congestion = styled.p``;
 
-const Overlay = ({ title }) => {
+const Overlay = ({ name, quantity }) => {
   return (
     <Container>
       <Wrapper>
-        <Title>{title}</Title>
+        <Name>{name}</Name>
         <Distance>0.5 km</Distance>
-        <LeftQuantity>15 kg / 50 kg</LeftQuantity>
+        <LeftQuantity>{quantity} kg / 50 kg</LeftQuantity>
         <Congestion>혼잡도 : 보통</Congestion>
       </Wrapper>
     </Container>

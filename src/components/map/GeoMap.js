@@ -12,8 +12,14 @@ const GeoMap = () => {
     errMsg: null,
     isLoading: true,
   });
+  const [data, setData] = useState([]);
+  const fetchData = async () => {
+    const data = await location();
+    setData(data);
+  };
 
   useEffect(() => {
+    fetchData();
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -51,15 +57,17 @@ const GeoMap = () => {
           width: "100vw",
           height: "100vh",
         }}
-        level={3}
+        level={5}
       >
-        {location().map((value) => (
-          <EventMarker
-            key={`EventMarker-${value.latlng.lat}-${value.latlng.lng}`}
-            position={value.latlng}
-            title={value.title}
-          />
-        ))}
+        {data.length > 0 &&
+          data.map((value) => (
+            <EventMarker
+              key={value.id}
+              position={value.latlng}
+              name={value.name}
+              quantity={value.quantity}
+            />
+          ))}
       </Map>
     </>
   );

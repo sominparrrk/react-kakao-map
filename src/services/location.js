@@ -1,22 +1,36 @@
-const location = () => {
-  return [
-    {
-      title: "서울시청",
-      latlng: { lat: 37.56576625599178, lng: 126.97686705889646 },
-    },
-    {
-      title: "청계천",
-      latlng: { lat: 37.569346285554055, lng: 126.97866605078136 },
-    },
-    {
-      title: "광화문",
-      latlng: { lat: 37.571722763845216, lng: 126.97643325941745 },
-    },
-    {
-      title: "롯데호텔",
-      latlng: { lat: 37.56487974767885, lng: 126.98139293006393 },
-    },
-  ];
+import axios from "axios";
+
+const apiKey = process.env.REACT_APP_SEOUL_DATA_API;
+
+const location = async () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const fetchedData = await axios.get(
+        `http://openapi.seoul.go.kr:8088/${apiKey}/json/OpenAptInfo/1/1000/`
+      );
+
+      if (
+        fetchedData.data.OpenAptInfo.RESULT.MESSAGE === "정상 처리되었습니다"
+      ) {
+        const list = fetchedData.data.OpenAptInfo.row;
+        const parsedList = list.map((list) => {
+          const obj = {
+            id: list.APT_CODE,
+            name: list.APT_NM,
+            latlng: { lat: list.Y_CODE, lng: list.X_CODE },
+            quantity: Math.floor(Math.random() * 50),
+          };
+          return obj;
+        });
+        console.log(parsedList);
+        resolve(parsedList);
+      } else {
+        console.error(fetchedData.data.OpenAptInfo.RESULT.MESSAGE);
+      }
+    } catch (error) {
+      console.error("error");
+    }
+  });
 };
 
 export default location;
