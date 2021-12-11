@@ -1,9 +1,7 @@
+import GeoMap from "./components/GeoMap";
+
 function App() {
-  return (
-    <div className="App">
-      <h1>template</h1>
-    </div>
-  );
+  return <GeoMap />;
 }
 
 export default App;
