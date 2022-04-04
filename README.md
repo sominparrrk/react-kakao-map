@@ -1,7 +1,7 @@
 # react-kakao-map
 
-> Project Name : Pet Waste Machine Finder
-> Lecture : MJU Creative Engineering Design - 2021 Autumn/Winter semester
+> Project Name : Pet Waste Machine Finder  
+> Lecture : MJU Creative Engineering Design - 2021 Autumn/Winter semester  
 > Period : 11 Dec 2021
 
 ## Tech Stack
