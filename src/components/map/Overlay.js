@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   position: fixed;
@@ -36,7 +36,7 @@ const Overlay = ({ name, quantity, distance }) => {
         <Name>{name}</Name>
         <Distance>{distance} km</Distance>
         <LeftQuantity>{quantity} kg / 50 kg</LeftQuantity>
-        <Congestion>혼잡도 : 보통</Congestion>
+        <Congestion>Degree of congestion : Average</Congestion>
       </Wrapper>
     </Container>
   );

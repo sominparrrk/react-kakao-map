@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Map } from "react-kakao-maps-sdk";
-import styled from "styled-components";
-import location from "../../services/location";
-import EventMarker from "./EventMarker";
+import React, { useEffect, useState } from 'react';
+import { Map } from 'react-kakao-maps-sdk';
+import styled from 'styled-components';
+import location from '../../services/location';
+import EventMarker from './EventMarker';
 
 const LoadingPage = styled.div`
   width: 100vw;
@@ -69,14 +69,14 @@ const GeoMap = () => {
     } else {
       setState((prev) => ({
         ...prev,
-        errMsg: "geolocation을 사용할 수 없어요..",
+        errMsg: "Can't use geolocation..",
         isLoading: false,
       }));
     }
   }, []);
 
   if (loading) {
-    return <LoadingPage>로딩 중 입니다</LoadingPage>;
+    return <LoadingPage>Loading ...</LoadingPage>;
   }
 
   return (
@@ -84,8 +84,8 @@ const GeoMap = () => {
       <Map
         center={state.center}
         style={{
-          width: "100vw",
-          height: "100vh",
+          width: '100vw',
+          height: '100vh',
         }}
         level={5}
       >

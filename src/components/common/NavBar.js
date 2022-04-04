@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const NavBar = () => {
   return (
     <Container>
       <Icon src="/img/hamburger-menu.svg" alt="menu" />
-      <Title>반배기</Title>
+      <Title>Machine Finder</Title>
       <Icon src="/img/info-icon.svg" alt="info" />
     </Container>
   );
